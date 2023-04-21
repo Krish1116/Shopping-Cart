@@ -2,6 +2,7 @@ import { Offcanvas, Stack } from "react-bootstrap";
 import { useProductCart } from "../context/Cart-Context";
 import { CartItem } from "./CartItem";
 import productItem from "../data/items.json";
+import "./ProductCart.css";
 
 type ProductCartProps = {
   isOpen: boolean;
@@ -17,7 +18,7 @@ export function ProductCart({ isOpen }: ProductCartProps) {
   return (
     <Offcanvas show={isOpen} placement="end" onHide={closeCart}>
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Cart</Offcanvas.Title>
+        <Offcanvas.Title className="cart-name">Cart</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Stack gap={3}>
